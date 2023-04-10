@@ -10,7 +10,7 @@
                 <ul class="list-item">
                     <?php
                     foreach ($list_category as $item) {
-                        if ($item['parent_id'] == 0) {
+                        if ($item['parent_id'] == 0 || $item['parent_id'] == 1) {
                     ?>
                             <li>
                                 <a href="?mod=product&action=cat_product&cat_id=<?php echo $item['cat_id'] ?>" title=""><?php echo $item['cat_title'] ?></a>
