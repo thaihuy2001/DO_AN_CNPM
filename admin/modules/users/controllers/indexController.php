@@ -58,7 +58,15 @@ function loginAction()
     load_view('login');
 }
 
-
+/ Đăng xuất
+function logoutAction()
+{
+    setcookie('is_login', true, time() - 3600);
+    setcookie('user_login', $_COOKIE['user_login'], time() - 3600);
+    unset($_SESSION['is_login']);
+    unset($_SESSION['user_login']);
+    redirect("?mod=users&action=login");
+}
 
 //quên mật khẩu của admin ở trang login
 function lostPassAction()
